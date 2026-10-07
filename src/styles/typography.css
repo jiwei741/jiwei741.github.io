@@ -32,27 +32,6 @@
       @apply text-foreground;
     }
 
-    /* ===== 中文段落排版 =====
-       1) 首行缩进两格（2em 正好等于两个汉字宽）
-       2) 段与段之间不留空行 —— 靠缩进区分段落，而不是靠空白
-       3) 行距统一由上面的 line-height 控制                        */
-    p {
-      text-indent: 2em;
-      margin-top: 0;
-      margin-bottom: 0;
-    }
-
-    /* 列表项里的段落不缩进，否则会和项目符号打架 */
-    li > p {
-      text-indent: 0;
-    }
-
-    /* 引用块、提示框里的段落同样不缩进：它们本身已有左边框/底色做区分 */
-    blockquote p,
-    .callout p {
-      text-indent: 0;
-    }
-
     a {
       @apply text-foreground hover:text-accent wrap-break-word decoration-dashed underline-offset-4 focus-visible:no-underline;
     }
@@ -134,6 +113,30 @@
     pre {
       @apply focus-visible:outline-accent focus-visible:border-transparent focus-visible:outline-2 focus-visible:outline-dashed;
     }
+  }
+
+  /* ===== 中文段落排版 =====
+     正文（.app-prose）与首页介绍（.chinese-prose）共用同一套规则：
+       1) 首行缩进两格 —— 2em 正好等于两个汉字宽
+       2) 段与段之间不留空行，靠缩进区分段落，而不是靠空白
+       3) 行距由 global.css 的 html { line-height: 1.8 } 统一控制 */
+  .app-prose p,
+  .chinese-prose p {
+    text-indent: 2em;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  /* 列表项里的段落不缩进，否则会和项目符号打架 */
+  .app-prose li > p,
+  .chinese-prose li > p {
+    text-indent: 0;
+  }
+
+  /* 引用块、提示框里的段落同样不缩进：它们本身已有左边框/底色做区分 */
+  .app-prose blockquote p,
+  .app-prose .callout p {
+    text-indent: 0;
   }
 
   /* ===== Code Blocks & Syntax Highlighting ===== */

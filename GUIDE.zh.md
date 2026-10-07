@@ -257,13 +257,20 @@ body {
 
 ## 七、改首页和关于页
 
+**这两页的文字都是纯 Markdown 文件，直接编辑即可，不用碰代码。**
+
 | 想改什么 | 改哪里 |
 | --- | --- |
-| 首页大标题、自我介绍 | `src/pages/index.astro` —— 找 `Hi, I'm Jiwei` 那段 |
-| About 页面全文 | `src/content/pages/about.md` |
+| **首页**的自我介绍文字 | `src/content/pages/home.md` |
+| **关于页**的全文 | `src/content/pages/about.md` |
+| 首页那个大标题（「你好，我是杨恩祺」） | `src/pages/index.astro` 里的 `<h1>` |
 | 站点标题、描述、GitHub 链接 | `astro-paper.config.ts` 最上面 |
 | 每页显示几篇文章 | `astro-paper.config.ts` 里的 `posts.perIndex` |
 | 页脚 | `src/components/Footer.astro` |
+
+> **首页和关于页是两个独立的文件，改一个不会影响另一个。**
+> 这也是最容易搞混的地方 —— 如果你改了 `about.md` 却发现首页没变，
+> 那就是因为它本来就只控制关于页。
 
 ---
 
@@ -301,11 +308,13 @@ F:\jiwei741.github.io\
 │
 ├── src/
 │   ├── pages/
-│   │   ├── index.astro        ★ 首页
-│   │   └── about.astro          About 页面外壳
+│   │   ├── index.astro          首页外壳（大标题 + 背景图那一段）
+│   │   └── about.astro          关于页外壳
 │   ├── content/
 │   │   ├── posts/             ★ 你的文章都在这里
-│   │   └── pages/about.md     ★ About 正文
+│   │   └── pages/
+│   │       ├── home.md        ★ 首页的自我介绍文字
+│   │       └── about.md       ★ 关于页正文
 │   ├── components/
 │   │   ├── Header.astro       ★ 导航栏
 │   │   └── Footer.astro         页脚
@@ -330,6 +339,8 @@ F:\jiwei741.github.io\
 | 我想… | 做什么 |
 | --- | --- |
 | 写新文章 | `src/content/posts/` 新建 `.md` |
+| **改首页自我介绍** | 改 `src/content/pages/home.md` |
+| **改关于页** | 改 `src/content/pages/about.md` |
 | 不发布某篇 | frontmatter 里 `draft: true` |
 | 文章置顶 | frontmatter 里 `featured: true` |
 | 换主题色 | 改 `src/styles/theme.css` 的 `--accent` |
