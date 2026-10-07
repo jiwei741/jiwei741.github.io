@@ -356,6 +356,23 @@ F:\jiwei741.github.io\
 2. `gh run list --limit 3` 看构建是否失败
 3. 失败了用 `gh run view --log-failed` 看具体错误
 
+**`git push` 报错 "更新被拒绝 / fetch first"** ⚠️ 这个最常见
+
+原因：**你在两个地方都改过** —— 比如在 GitHub 网页上直接编辑了一篇文章，
+同时又在本地改了别的东西。远程有你本地没有的提交，Git 出于保护拒绝推送。
+
+```sh
+git pull --rebase origin main   # 把你的提交叠到远程改动后面
+git push
+```
+
+**核心原则：不要用 `git push --force`。** 那会**直接删掉远程上你的改动**。
+`--rebase` 才能两边都保住。
+
+（如果两边改了**同一个文件的同一行**，rebase 会停下来让你手动选。
+打开提示的文件，删掉 `<<<<<<<` / `=======` / `>>>>>>>` 这些标记行，
+留下你想要的内容，然后 `git add -A && git rebase --continue`。）
+
 **改坏了想回退**
 ```sh
 git log --oneline          # 找到上一个正常版本的哈希
