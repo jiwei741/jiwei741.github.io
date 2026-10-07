@@ -132,20 +132,25 @@ int main() {
 ```css
 :root,                     /* ← 浅色模式 */
 [data-theme="light"] {
-  --background: #fdfdfd;         /* 页面底色 */
-  --foreground: #282728;         /* 正文颜色 */
-  --accent: #006cac;             /* 强调色：链接、按钮、高亮 */
+  --background: #f8f4ef;         /* 页面底色（暖白纸面） */
+  --foreground: #2c2634;         /* 正文颜色（深靛紫） */
+  --accent: #a44222;             /* 强调色：链接、按钮、高亮（焦橙） */
   --accent-foreground: #ffffff;  /* 强调色上的文字 */
-  --muted: #e6e6e6;              /* 次要背景 */
-  --muted-foreground: #6b7280;   /* 次要文字 */
-  --border: #ece9e9;             /* 边框线 */
+  --muted: #ece4da;              /* 次要背景 */
+  --muted-foreground: #6f6459;   /* 次要文字 */
+  --border: #e3d8cc;             /* 边框线 */
 }
 
 [data-theme="dark"] {      /* ← 深色模式，改法一样 */
-  --background: #212737;
+  --background: #241f33;
+  --foreground: #ece4dc;
+  --accent: #d4784c;
   ...
 }
 ```
+
+> 这套色是从你那张背景图里提取的（暖白 / 深靛紫 / 赭红 / 焦橙）。
+> 想换风格，**只改 `--accent` 一个值**就能看出大效果，明暗两套都要改。
 
 **改颜色最快的办法**：只改 `--accent` 一个值。比如换成绿色 `#10b981`、
 紫色 `#8b5cf6`，整站风格立刻变了，而且明暗两套会自动协调。
@@ -173,7 +178,7 @@ int main() {
 打开 **`src/styles/background.css`**，改最上面两个值：
 
 ```css
---bg-opacity: 0.15;   /* 图片浓淡：0=看不见，1=原图亮度 */
+--bg-opacity: 0.2;    /* 图片浓淡：0=看不见，1=原图亮度 */
 --bg-blur: 0px;       /* 柔焦程度，2~8 会让图更"退后" */
 ```
 
@@ -201,7 +206,24 @@ body {
 
 ---
 
-## 五、改导航栏
+## 五、换站点图标
+
+现在用的是你那张图的裁切版：`public/favicon.png`（浏览器标签页上那个小图）。
+
+**我额外生成了一个 `EY` 字母版** —— `public/favicon-monogram.png`。
+
+原因：我实测过，图片缩到 32px（浏览器标签的实际大小）会糊成一团色块，
+16px 完全认不出；而字母版在任何尺寸下都清晰。想换：
+
+```astro
+<!-- src/layouts/Layout.astro -->
+<link rel="icon" type="image/png" href={getAssetPath("favicon.png")} />
+                                                  ↑ 改成 favicon-monogram.png
+```
+
+`public/apple-touch-icon.png` 是手机「添加到主屏幕」时用的图标，换法同理。
+
+## 六、改导航栏
 
 文件：**`src/components/Header.astro`**
 
@@ -226,7 +248,7 @@ body {
 
 ---
 
-## 六、改首页和关于页
+## 七、改首页和关于页
 
 | 想改什么 | 改哪里 |
 | --- | --- |
@@ -238,7 +260,7 @@ body {
 
 ---
 
-## 七、动态效果
+## 八、动态效果
 
 **已经内置的**：页面之间切换是**平滑淡入淡出**（不是刷新跳转），
 这个能力来自 `Layout.astro` 里的 `<ClientRouter />`，不用你做任何事。
@@ -263,7 +285,7 @@ body {
 
 ---
 
-## 八、文件地图（哪个文件管什么）
+## 九、文件地图（哪个文件管什么）
 
 ```
 F:\jiwei741.github.io\
@@ -296,7 +318,7 @@ F:\jiwei741.github.io\
 
 ---
 
-## 九、速查表
+## 十、速查表
 
 | 我想… | 做什么 |
 | --- | --- |
@@ -314,7 +336,7 @@ F:\jiwei741.github.io\
 
 ---
 
-## 十、出问题了怎么办
+## 十一、出问题了怎么办
 
 **本地页面报错 / 白屏**
 看终端里的红色报错。最常见的是 frontmatter 格式错了

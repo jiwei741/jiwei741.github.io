@@ -2,14 +2,12 @@ import { defineAstroPaperConfig } from "./src/types/config";
 
 export default defineAstroPaperConfig({
   site: {
-    // ▼▼▼ 这些是你最需要改的地方 ▼▼▼
     url: "https://jiwei741.github.io/",
-    title: "Jiwei",
+    title: "Enqi Yang",
     description:
-      "Personal site and blog — projects I'm building, notes on what I'm learning, and things I find interesting.",
-    author: "Jiwei",
+      "Incoming master's student at NUAA, working on key software and applied AI. Notes, projects, and the occasional write-up.",
+    author: "Enqi Yang",
     profile: "https://github.com/jiwei741",
-    // ▲▲▲ 这些是你最需要改的地方 ▲▲▲
     ogImage: "default-og.jpg",
     lang: "en",
     timezone: "Asia/Shanghai",

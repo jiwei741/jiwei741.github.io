@@ -10,25 +10,31 @@
   --font-app: var(--font-google-sans-code);
 }
 
+/*
+ * 配色取自背景图（Samurai Champloo 夕阳场景）提取出的主色：
+ *   暖白 #e6d7cd ・ 深靛紫 #433a58 ・ 赭红 #a36151 ・ 焦橙 #a44222
+ * 想换风格，改下面的 --accent 一个值就够，明暗两套记得都改。
+ */
+
 /* Light theme values */
 :root,
 [data-theme="light"] {
-  --background: #fdfdfd;
-  --foreground: #282728;
-  --accent: #006cac;
+  --background: #f8f4ef; /* 暖白纸面，取自夕阳高光 */
+  --foreground: #2c2634; /* 深靛紫压暗，作正文 */
+  --accent: #a44222; /* 焦橙，取自 Mugen 的衣服 */
   --accent-foreground: #ffffff;
-  --muted: #e6e6e6;
-  --muted-foreground: #6b7280;
-  --border: #ece9e9;
+  --muted: #ece4da; /* 暖灰 */
+  --muted-foreground: #6f6459;
+  --border: #e3d8cc;
 }
 
 /* Dark theme values */
 [data-theme="dark"] {
-  --background: #212737;
-  --foreground: #eaedf3;
-  --accent: #ff6b01;
-  --accent-foreground: #ffffff;
-  --muted: #343f60;
-  --muted-foreground: #afb9ca;
-  --border: #ab4b08;
+  --background: #241f33; /* 深靛紫，取自 Jin 的衣服与暗部 */
+  --foreground: #ece4dc; /* 暖白，取自天空 */
+  --accent: #d4784c; /* 提亮的赭橙，保证暗底上可读 */
+  --accent-foreground: #1c1728;
+  --muted: #37304a;
+  --muted-foreground: #a99fb8;
+  --border: #453b5c;
 }
