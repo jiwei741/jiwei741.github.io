@@ -1,43 +1,37 @@
 ---
-title: "Hello, world"
-description: "Why I finally set up a personal site, and what I plan to put here."
+title: "你好，世界"
+description: "为什么终于决定搭一个自己的站点，以及打算在这里放些什么。"
 pubDatetime: 2026-10-07T10:00:00+08:00
 featured: true
 draft: false
-tags: ["meta"]
+tags: ["随笔"]
 ---
 
-I've been meaning to do this for a while. Most of what I build ends up in a
-repository somewhere with a README that says almost nothing, and the reasoning
-behind it never gets written down anywhere.
+这件事我想了挺久了。大部分做完的东西最后都停在某个仓库里，README 写得几乎等于没写，
+当初为什么这么做、中间踩了什么坑，也从来没落在纸上。
 
-So this is an attempt to fix that.
+所以想试着改一改。
 
-## What goes here
+## 这里会放什么
 
-Roughly three kinds of things:
+大致三类：
 
-1. **Project notes** — what I built, what broke, and what I'd do differently.
-   The interesting part is almost never the final code.
-2. **Things I'm learning** — written up while I still remember what was
-   confusing. If I wait until I understand it properly, I never write it.
-3. **Occasional short posts** — a bug that cost me an afternoon, a tool worth
-   using, that sort of thing.
+1. **项目记录** —— 做了什么、哪里炸了、如果重来会怎么改。有意思的部分几乎从来不是最后那份代码。
+2. **正在学的东西** —— 趁自己还记得"当时到底哪里没想明白"的时候写下来。等真正弄懂了再写，往往就写不出来了。
+3. **零散的想法** —— 一个坑掉了一下午、一个值得一用的工具，诸如此类。
 
-## What won't go here
+## 这里不会放什么
 
-- Tutorials that already exist in twenty better versions elsewhere
-- Anything I haven't actually tried myself
+- 已经有二十个更好版本的教程
+- 我自己没真正试过的东西
 
-## How it's built
+## 怎么搭的
 
-This site is static — plain HTML and CSS generated from Markdown at build time
-by [Astro](https://astro.build/), using the
-[AstroPaper](https://github.com/satnaing/astro-paper) theme. It's hosted on
-GitHub Pages, and the whole build runs in GitHub Actions on every push.
+这个站点是纯静态的 —— Markdown 在构建时被 [Astro](https://astro.build/) 生成成普通的
+HTML 和 CSS，主题基于 [AstroPaper](https://github.com/satnaing/astro-paper)，托管在
+GitHub Pages 上，每次 push 由 GitHub Actions 自动构建。
 
-That means: no database, no server, nothing to keep running. It costs nothing
-and it's fast, which is about the right amount of engineering for a blog.
+没有数据库、没有服务器、没有需要一直跑着的东西。不花钱，也够快 ——
+对一个博客来说，这大概是刚刚好的工程量。
 
-If you want to see what I'm actually working on, the code is on
-[GitHub](https://github.com/jiwei741).
+想看我实际在写什么，代码在 [GitHub](https://github.com/jiwei741)。

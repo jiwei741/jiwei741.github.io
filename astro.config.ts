@@ -29,8 +29,8 @@ export default defineConfig({
     }),
   ],
   i18n: {
-    locales: ["en"],
-    defaultLocale: "en",
+    locales: ["zh-CN"],
+    defaultLocale: "zh-CN",
     routing: {
       prefixDefaultLocale: false,
     },
@@ -38,8 +38,8 @@ export default defineConfig({
   markdown: {
     processor: unified({
       remarkPlugins: [
-        remarkToc,
-        [remarkCollapse, { test: "Table of contents" }],
+        [remarkToc, { heading: "目录|toc|table[ -]of[ -]contents?" }],
+        [remarkCollapse, { test: "目录" }],
       ],
       rehypePlugins: [rehypeCallouts],
     }),
@@ -63,7 +63,18 @@ export default defineConfig({
       name: "Google Sans Code",
       cssVariable: "--font-google-sans-code",
       provider: fontProviders.google(),
-      fallbacks: ["monospace"],
+      // 正文以中文为主。Google Sans Code 没有中文字形，
+      // 所以必须给出中文字体回退，否则会掉到 monospace（等宽宋体），非常难看。
+      fallbacks: [
+        "system-ui",
+        "-apple-system",
+        "Segoe UI",
+        "PingFang SC",
+        "Hiragino Sans GB",
+        "Microsoft YaHei",
+        "Noto Sans SC",
+        "sans-serif",
+      ],
       weights: [300, 400, 500, 600, 700],
       styles: ["normal", "italic"],
       formats: ["woff", "ttf"],

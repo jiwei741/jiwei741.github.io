@@ -330,6 +330,8 @@ F:\jiwei741.github.io\
 | 调背景浓淡 | 改 `src/styles/background.css` 的 `--bg-opacity` |
 | 改站点名/描述 | 改 `astro-paper.config.ts` |
 | 改导航栏 | 改 `src/components/Header.astro` |
+| 改界面文字（导航/页脚/404/翻页） | 改 `src/i18n/lang/zh-CN.ts` |
+| 改整站语言 | `astro.config.ts` 的 `i18n.locales` + `astro-paper.config.ts` 的 `lang` |
 | 本地预览 | `npm run dev` |
 | 发布上线 | `git add -A && git commit -m "..." && git push` |
 | 看部署结果 | `gh run list --limit 3` |

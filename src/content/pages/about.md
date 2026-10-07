@@ -1,41 +1,34 @@
 ---
-title: "About"
-description: "Enqi Yang — incoming master's student at NUAA, working on key software and applied AI."
+title: "关于"
+description: "Enqi Yang —— 南京航空航天大学研0，方向是关键软件与 AI 应用技术。"
 ---
 
-Hi, I'm **Enqi Yang**.
+你好，我是 **Enqi Yang**。
 
-I'm an incoming master's student at **Nanjing University of Aeronautics and
-Astronautics**, where my focus is **key software** and **applied AI
-technology**.
+南京航空航天大学**研0**，方向是**关键软件**与**AI 应用技术**。
 
-## Where I've been
+## 我做过什么
 
-Most of my undergraduate time went into competitive programming — **XCPC** and
-its relatives — where I developed a remarkably consistent ability to finish
-just outside the medal places. I kept showing up anyway, which I would like to
-think counts for something.
+本科大部分时间交给了算法竞赛 —— **XCPC** 及其同类赛事。我在其中练就了一手相当稳定的
+"打铁"手艺：总能精准地停在获奖线之外。即便如此，我还是一场一场地打了下来，
+私以为这至少说明抗打击能力尚可。
 
-I also competed in mathematical modeling: **MCM/ICM** and the national contest.
-Those went somewhat better than the algorithm contests, which is admittedly a
-low bar.
+也参加过数学建模的**美赛**与**国赛**，成绩比算法竞赛好看一些，虽然这个参照系本身也不算高。
 
-## What this site is for
+## 这个站点
 
-Notes, project write-ups, and the occasional post about whatever I happen to be
-working on. Partly so I remember it later, and partly so that the next person
-searching for the same error message finds an answer instead of nothing.
+用来放笔记、项目记录，以及偶尔一些想写下来的东西。一半是为了以后自己还能翻到，
+一半是希望下一个搜到同样报错的人，能在这里找到答案，而不是一无所获。
 
-I'm not attempting a polished technical blog here — just somewhere to put
-things down as I go.
+我没打算把它做成一个精致的技术博客 —— 只是找个地方，把东西随手放下来。
 
-## Find me
+## 联系我
 
-- **GitHub** — [@jiwei741](https://github.com/jiwei741)
+- **GitHub** —— [@jiwei741](https://github.com/jiwei741)
 
-## Colophon
+## 关于本站
 
-Built with [Astro](https://astro.build/) on top of the
-[AstroPaper](https://github.com/satnaing/astro-paper) theme. Static files served
-from GitHub Pages: no database, no tracking, no ads, and nothing that needs
-maintaining at 2am.
+用 [Astro](https://astro.build/) 构建，基于
+[AstroPaper](https://github.com/satnaing/astro-paper) 主题改造。全部是托管在
+GitHub Pages 上的静态文件：没有数据库、没有追踪、没有广告，
+也不存在半夜需要你爬起来处理的东西。

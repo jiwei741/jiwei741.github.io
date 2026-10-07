@@ -5,11 +5,11 @@ export default defineAstroPaperConfig({
     url: "https://jiwei741.github.io/",
     title: "Enqi Yang",
     description:
-      "Incoming master's student at NUAA, working on key software and applied AI. Notes, projects, and the occasional write-up.",
+      "南京航空航天大学研0，方向是关键软件与 AI 应用。这里记录我的项目、笔记和日常。",
     author: "Enqi Yang",
     profile: "https://github.com/jiwei741",
     ogImage: "default-og.jpg",
-    lang: "en",
+    lang: "zh-CN",
     timezone: "Asia/Shanghai",
     dir: "ltr",
   },
