@@ -5,6 +5,9 @@ occasional write-up.
 
 **Live at:** https://jiwei741.github.io
 
+> 📖 **中文维护手册 → [GUIDE.zh.md](./GUIDE.zh.md)**
+> 改颜色、换背景图、发文章、调导航栏的完整操作步骤都在里面。
+
 ## Stack
 
 - [Astro](https://astro.build/) — static site generation

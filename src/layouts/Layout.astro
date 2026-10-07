@@ -1,11 +1,31 @@
 ---
-import { Font } from "astro:assets";
+import { Font, getImage } from "astro:assets";
 import { ClientRouter } from "astro:transitions";
 import { getRelativeLocaleUrl } from "astro:i18n";
+import type { ImageMetadata } from "astro";
 import { resolveDefaultOgImagePath } from "@/utils/resolveDefaultOgImagePath";
 import { getAssetPath } from "@/utils/withBase";
 import config from "@/config";
 import "@/styles/global.css";
+
+// 背景图：src/assets/backgrounds/ 里的图片会被自动收集，
+// 每次访问从里面随机挑一张。目录为空则不显示背景图。
+// 统一压缩成 1920px 宽的 webp —— 原图几 MB 也不会拖慢网站。
+const backgroundModules = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/backgrounds/*.{jpg,jpeg,png,webp,avif}",
+  { eager: true }
+);
+const backgrounds = await Promise.all(
+  Object.values(backgroundModules).map(async m => {
+    const optimized = await getImage({
+      src: m.default,
+      width: 1920,
+      format: "webp",
+      quality: 72,
+    });
+    return optimized.src;
+  })
+);
 
 type Props = {
   title?: string;
@@ -113,6 +133,21 @@ const rssHref = getRelativeLocaleUrl(
         window.__theme = { value: theme };
       })();
     </script>
+
+    {
+      backgrounds.length > 0 && (
+        <script is:inline define:vars={{ backgrounds }}>
+          (function () {
+            var url =
+              backgrounds[Math.floor(Math.random() * backgrounds.length)];
+            document.documentElement.style.setProperty(
+              "--bg-image",
+              'url("' + url + '")'
+            );
+          })();
+        </script>
+      )
+    }
 
     <ClientRouter />
   </head>
