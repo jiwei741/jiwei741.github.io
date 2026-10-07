@@ -209,20 +209,26 @@ body {
 
 ## 五、换站点图标
 
-现在用的是你那张图的裁切版：`public/favicon.png`（浏览器标签页上那个小图）。
+站点图标是 **`public/favicon.png`**（浏览器标签页上那个小图），
+目前是一个**手绘矢量武士剪影**：乱发 + 头带 + 背后的刀，底色用站点强调色。
 
-**我额外生成了一个 `EY` 字母版** —— `public/favicon-monogram.png`。
+`public/apple-touch-icon.png` 是手机「添加到主屏幕」时用的图标。
 
-原因：我实测过，图片缩到 32px（浏览器标签的实际大小）会糊成一团色块，
-16px 完全认不出；而字母版在任何尺寸下都清晰。想换：
+### 为什么不直接用那张动漫图当图标
+
+我实测过很多次：把动漫截图裁一块当 favicon，**缩到 32px（浏览器标签的真实大小）
+会糊成一团色块，16px 完全认不出**。所以我改成了矢量手绘 —— 任意尺寸都锐利。
+
+### 怎么换
+
+**最简单**：用你自己的图片替换这两个文件（建议 192×192 和 180×180 的 PNG）。
+
+**想改引用路径**：改 `src/layouts/Layout.astro`：
 
 ```astro
-<!-- src/layouts/Layout.astro -->
 <link rel="icon" type="image/png" href={getAssetPath("favicon.png")} />
-                                                  ↑ 改成 favicon-monogram.png
+<link rel="apple-touch-icon" href={getAssetPath("apple-touch-icon.png")} />
 ```
-
-`public/apple-touch-icon.png` 是手机「添加到主屏幕」时用的图标，换法同理。
 
 ## 六、改导航栏
 
