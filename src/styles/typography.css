@@ -5,6 +5,9 @@
   .app-prose {
     @apply prose;
 
+    /* 统一行距：中文正文 1.8 比较舒服。标题保留各自更紧的行距。 */
+    line-height: 1.8;
+
     h1,
     h2,
     h3,
@@ -13,8 +16,10 @@
       @apply text-foreground mb-3;
     }
 
+    /* 中文没有斜体排版传统，浏览器只会把字硬倾斜，因此 h3 不用 italic，
+       改用颜色区分层级 */
     h3 {
-      @apply italic;
+      @apply text-muted-foreground;
     }
 
     p,
@@ -25,6 +30,27 @@
     table,
     code {
       @apply text-foreground;
+    }
+
+    /* ===== 中文段落排版 =====
+       1) 首行缩进两格（2em 正好等于两个汉字宽）
+       2) 段与段之间不留空行 —— 靠缩进区分段落，而不是靠空白
+       3) 行距统一由上面的 line-height 控制                        */
+    p {
+      text-indent: 2em;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    /* 列表项里的段落不缩进，否则会和项目符号打架 */
+    li > p {
+      text-indent: 0;
+    }
+
+    /* 引用块、提示框里的段落同样不缩进：它们本身已有左边框/底色做区分 */
+    blockquote p,
+    .callout p {
+      text-indent: 0;
     }
 
     a {

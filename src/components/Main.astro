@@ -22,7 +22,9 @@ const backUrl = config.features.showBackButton
   class:list={["app-layout pb-4", className]}
 >
   <h1 class="text-2xl font-semibold sm:text-3xl">{pageTitle}</h1>
-  <p class="mt-2 mb-6 italic">{pageDesc}</p>
+  <!-- 只在有副标题时才渲染，否则会留下一个空段落白白占掉一段高度。
+       不用 italic：中文没有斜体排版传统，浏览器只会硬倾斜，很难看。 -->
+  {pageDesc && <p class="text-muted-foreground mt-2 mb-6">{pageDesc}</p>}
   <slot />
 </main>
 

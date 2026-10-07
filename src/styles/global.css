@@ -7,6 +7,12 @@
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 @layer base {
+  /* 统一行距：全站正文用同一个值，避免各处松紧不一。
+     标题、代码块有各自更合适的行距，会覆盖这一条。 */
+  html {
+    line-height: 1.8;
+  }
+
   * {
     @apply border-border outline-accent/75;
     scrollbar-width: auto;
